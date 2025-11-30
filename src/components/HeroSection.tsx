@@ -11,7 +11,7 @@ interface CVModalProps {
   pdfPath: string;
 }
 
-const CVModal = ({ show, onClose, pdfPath }: CVModalProps) => {
+const CVModal = ({ show, onClose }: CVModalProps) => {
   if (!show) return null;
 
   return (
@@ -34,7 +34,7 @@ const CVModal = ({ show, onClose, pdfPath }: CVModalProps) => {
         </div>
         <div className="flex-1 overflow-auto">
           <iframe
-            src={"src/assets/SajjadAhmedCV.pdf"}
+            src={"/SajjadAhmedCV.pdf"}
             className="w-full h-full"
             title="CV PDF"
           />
@@ -165,7 +165,7 @@ export default function HeroSection() {
 
             {/* Image in front */}
             <img
-              src="src/assets/Sajjad_Ahmed.png"
+              src="/Sajjad_Ahmed.png"
               alt="Sajjad"
               className="relative w-64 h-auto md:w-72 xl:w-96 md:h-auto object-cover z-10 drop-shadow-xl max-w-full"
             />
