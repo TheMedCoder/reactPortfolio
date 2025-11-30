@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes rotate-border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.border-rotate {
+  --border-angle: 0deg;
+  animation: rotate-border 4s linear infinite;
+  background:
+    linear-gradient(#0f172a, #0f172a) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        transparent 0%,
+        transparent 60%,
+        #38bdf8 90%,
+        #818cf8 70%,
+        transparent 90%,
+        transparent 100%
+      )
+      border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.border-rotate:hover {
+  box-shadow: 
+    0 0 10px #38bdf8,
+    0 0 10px #818cf8,
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  animation: rotate-border 3s linear infinite;
+}
+
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25%);
+    }
+  }
+
+  @keyframes bounce-dot {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce-dot {
+    animation: bounce-dot 0.75s ease-out 2;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }

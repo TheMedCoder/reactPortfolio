@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes rotate-border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.border-rotate {
+  --border-angle: 0deg;
+  animation: rotate-border 4s linear infinite;
+  background: linear-gradient(oklch(13% 0.028 261.692), oklch(13% 0.028 261.692)) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        transparent 0%,
+        transparent 60%,
+        #00d9ff 70%,
+        #77e762 80%,
+        transparent 90%,
+        transparent 100%
+      )
+      border-box;
+  border: 2px solid transparent;
+}
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25%);
+    }
+  }
